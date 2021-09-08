@@ -3,7 +3,7 @@ name: cicd
 on: push
 
 jobs:
-  docker:
+  pre:
     runs-on: ubuntu-latest
     steps:
       -
@@ -20,6 +20,13 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: .
-          push: true
-          tags: ghcr.io/mattthaber/san-test:latest
+          context: ./client/.
+          push: false
+          tags: ghcr.io/mattthaber/san-test:${GITHUB_SHA}
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: ./service/.
+          push: false
+          tags: ghcr.io/mattthaber/san-test:${GITHUB_SHA}
