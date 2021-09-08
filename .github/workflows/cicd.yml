@@ -36,7 +36,7 @@ jobs:
           context: ./client/.
           push: true
           tags: |
-            ghcr.io/mattthaber/san-test-client:${{ env.GITHUB_SHA }}
+            ghcr.io/mattthaber/san-test-client:${{ github.sha }}
             ghcr.io/mattthaber/san-test-client:latest
             ghcr.io/mattthaber/san-test-client:0.0.2
       -
@@ -46,6 +46,6 @@ jobs:
           context: ./service/.
           push: true
           tags: |
-            ghcr.io/mattthaber/san-test-service:${{ env.GITHUB_SHA }}
+            ghcr.io/mattthaber/san-test-service:${{ github.sha }}
             ghcr.io/mattthaber/san-test-service:latest
             ghcr.io/mattthaber/san-test-service:0.0.2
