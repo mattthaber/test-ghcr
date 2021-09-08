@@ -13,14 +13,14 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./client/.
+          context: ./client/
           push: false
           tags: ghcr.io/mattthaber/san-test-client:${{ github.sha }}
       -
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./service/.
+          context: ./service/
           push: false
           tags: ghcr.io/mattthaber/san-test-service:${{ github.sha }}
   publish:
