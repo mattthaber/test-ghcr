@@ -10,12 +10,8 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       -
-        name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: ./client
-          push: false
-          tags: ghcr.io/mattthaber/san-test-client:${{ github.sha }}
+        name: test
+        run: jq .
       -
         name: Build and push
         uses: docker/build-push-action@v2
