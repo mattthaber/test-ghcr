@@ -15,14 +15,14 @@ jobs:
         with:
           context: ./client/.
           push: false
-          tags: ghcr.io/mattthaber/san-test-client:${GITHUB_SHA}
+          tags: ghcr.io/mattthaber/san-test-client:${{ env.GITHUB_SHA }}
       -
         name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: ./service/.
           push: false
-          tags: ghcr.io/mattthaber/san-test-service:${GITHUB_SHA}
+          tags: ghcr.io/mattthaber/san-test-service:${{ env.GITHUB_SHA }}
   publish:
     runs-on: ubuntu-latest
     steps:
