@@ -35,17 +35,17 @@ jobs:
         with:
           context: ./client/.
           push: true
-          tags: 
-            - ghcr.io/mattthaber/san-test-client:${GITHUB_SHA}
-            - ghcr.io/mattthaber/san-test-client:latest
-            - ghcr.io/mattthaber/san-test-client:0.0.2
+          tags: |
+            ghcr.io/mattthaber/san-test-client:${GITHUB_SHA}
+            ghcr.io/mattthaber/san-test-client:latest
+            ghcr.io/mattthaber/san-test-client:0.0.2
       -
         name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: ./service/.
           push: true
-          tags: 
-            - ghcr.io/mattthaber/san-test-service:${GITHUB_SHA}
-            - ghcr.io/mattthaber/san-test-service:latest
-            - ghcr.io/mattthaber/san-test-service:0.0.2
+          tags: |
+            ghcr.io/mattthaber/san-test-service:${GITHUB_SHA}
+            ghcr.io/mattthaber/san-test-service:latest
+            ghcr.io/mattthaber/san-test-service:0.0.2
